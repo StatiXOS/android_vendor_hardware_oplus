@@ -1,0 +1,26 @@
+//
+// Copyright (C) 2022 StatiX
+// SPDX-License-Identifer: Apache-2.0
+//
+
+cc_binary {
+    name: "android.hardware.biometrics.fingerprint-service.oplus",
+    vendor: true,
+    relative_install_path: "hw",
+    init_rc: ["fingerprint-default.rc"],
+    vintf_fragments: ["fingerprint-default.xml"],
+    local_include_dirs: ["include"],
+    srcs: [
+        "CancellationSignal.cpp",
+        "Fingerprint.cpp",
+        "Session.cpp",
+        "WorkerThread.cpp",
+        "main.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.biometrics.fingerprint-V2-ndk",
+        "android.hardware.biometrics.common-V2-ndk",
+    ],
+}
