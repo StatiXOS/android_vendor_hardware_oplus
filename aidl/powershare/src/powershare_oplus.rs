@@ -15,13 +15,8 @@ fn set(path: &str, value: String) -> Result<(), StatusCode> {
     std::fs::write(path, value).map_err(|_| StatusCode::PERMISSION_DENIED)
 }
 
-fn get<T: From<Vec<u8>>>(path: &str, default: T) -> T {
-    let result = std::fs::read(path);
-    if let Ok(answer) = result {
-        answer.into()
-    } else {
-        default
-    }
+fn get(path: &str) -> Option<String> {
+    std::fs::read_to_string(path).ok()
 }
 
 pub struct OplusPowerShare;
@@ -29,9 +24,12 @@ pub struct OplusPowerShare;
 impl Interface for OplusPowerShare {}
 
 impl IPowerShare for OplusPowerShare {
-
     fn isEnabled(&self) -> BinderResult<bool> {
-        Ok(std::str::from_utf8(&get(TX_ENABLE_PATH, "0".as_bytes().to_vec())).unwrap() == "1\n")
+        if let Some(ans) = get(TX_ENABLE_PATH) {
+            Ok(ans == "1")
+        } else {
+            Ok(false)
+        }
     }
 
     fn setEnabled(&self, enabled: bool) -> BinderResult<bool> {
