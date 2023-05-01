@@ -26,7 +26,7 @@ impl Interface for OplusPowerShare {}
 impl IPowerShare for OplusPowerShare {
     fn isEnabled(&self) -> BinderResult<bool> {
         if let Some(ans) = get(TX_ENABLE_PATH) {
-            Ok(ans == "enable")
+            Ok(ans != "disable")
         } else {
             Ok(false)
         }
