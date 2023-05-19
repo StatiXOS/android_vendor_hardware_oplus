@@ -6,88 +6,92 @@
 package org.lineageos.settings.device
 
 import android.app.NotificationManager
+import android.app.Service
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.SharedPreferences
 import android.hardware.input.InputManager
 import android.media.AudioManager
 import android.media.AudioSystem
+import android.os.IBinder
+import android.os.UEventObserver
 import android.os.VibrationAttributes
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.provider.Settings
 import android.view.KeyEvent
-import com.android.internal.os.DeviceKeyHandler
 
 import java.io.File
 import java.util.concurrent.Executors
 
-class KeyHandler(context: Context) : DeviceKeyHandler {
-    private val audioManager = context.getSystemService(AudioManager::class.java)!!
-    private val inputManager = context.getSystemService(InputManager::class.java)!!
-    private val notificationManager = context.getSystemService(NotificationManager::class.java)!!
-    private val vibrator = context.getSystemService(Vibrator::class.java)!!
+import androidx.preference.PreferenceManager
 
-    private val packageContext = context.createPackageContext(
-        KeyHandler::class.java.getPackage()!!.name, 0
-    )
-    private val sharedPreferences
-        get() = packageContext.getSharedPreferences(
-            packageContext.packageName + "_preferences",
-            Context.MODE_PRIVATE or Context.MODE_MULTI_PROCESS
-        )
-
-    private val executorService = Executors.newSingleThreadExecutor()
+class KeyHandler : Service() {
+    private lateinit var audioManager: AudioManager
+    private lateinit var notificationManager: NotificationManager
+    private lateinit var vibrator: Vibrator
+    private lateinit var sharedPreferences: SharedPreferences
+    private const val KEY_STATE_PATH = "/proc/tristatekey/tri_state"
 
     private var wasMuted = false
     private val broadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             val stream = intent.getIntExtra(AudioManager.EXTRA_VOLUME_STREAM_TYPE, -1)
             val state = intent.getBooleanExtra(AudioManager.EXTRA_STREAM_VOLUME_MUTED, false)
-            if (stream == AudioSystem.STREAM_MUSIC && !state) {
+            if (stream == AudioSystem.STREAM_MUSIC && state == false) {
                 wasMuted = false
             }
         }
     }
 
-    init {
-        context.registerReceiver(
+    private val alertSliderEventObserver = object : UEventObserver() {
+        private val lock = Any()
+
+        override fun onUEvent(event: UEvent) {
+            synchronized(lock) {
+                event.get("SWITCH_STATE")?.let {
+                    handleMode(it.toInt())
+                    return
+                }
+                event.get("STATE")?.let {
+                    val none = it.contains("USB=0")
+                    val vibration = it.contains("HOST=0")
+                    val silent = it.contains("null)=0")
+
+                    when (File(KEY_STATE_PATH).readText().trim()) {
+                        "1" -> handleMode(POSITION_TOP)
+                        "2" -> handleMode(POSITION_MIDDLE)
+                        "3" -> handleMode(POSITION_BOTTOM)
+                    }
+
+                    return
+                }
+            }
+        }
+    }
+
+    override fun onCreate() {
+        audioManager = getSystemService(AudioManager::class.java)
+        notificationManager = getSystemService(NotificationManager::class.java)
+        vibrator = getSystemService(Vibrator::class.java)
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+
+        registerReceiver(
             broadcastReceiver,
             IntentFilter(AudioManager.STREAM_MUTE_CHANGED_ACTION)
         )
+        alertSliderEventObserver.startObserving("tri-state-key")
+        alertSliderEventObserver.startObserving("tri_state_key")
     }
 
-    override fun handleKeyEvent(event: KeyEvent): KeyEvent? {
-        if (event.action != KeyEvent.ACTION_DOWN) {
-            return event
-        }
-
-        val deviceName = inputManager.getInputDevice(event.deviceId).name
-
-        if (deviceName != "oplus,hall_tri_state_key" && deviceName != "oplus,tri-state-key") {
-            return event
-        }
-
-        when (File("/proc/tristatekey/tri_state").readText().trim()) {
-            "1" -> handleMode(POSITION_TOP)
-            "2" -> handleMode(POSITION_MIDDLE)
-            "3" -> handleMode(POSITION_BOTTOM)
-        }
-
-        return null
-    }
+    override fun onBind(intent: Intent?): IBinder? = null
 
     private fun vibrateIfNeeded(mode: Int) {
         when (mode) {
-            AudioManager.RINGER_MODE_VIBRATE -> vibrator.vibrate(
-                MODE_VIBRATION_EFFECT,
-                HARDWARE_FEEDBACK_VIBRATION_ATTRIBUTES
-            )
-            AudioManager.RINGER_MODE_NORMAL -> vibrator.vibrate(
-                MODE_NORMAL_EFFECT,
-                HARDWARE_FEEDBACK_VIBRATION_ATTRIBUTES
-            )
+            AudioManager.RINGER_MODE_VIBRATE -> vibrator.vibrate(MODE_VIBRATION_EFFECT)
+            AudioManager.RINGER_MODE_NORMAL -> vibrator.vibrate(MODE_NORMAL_EFFECT)
         }
     }
 
