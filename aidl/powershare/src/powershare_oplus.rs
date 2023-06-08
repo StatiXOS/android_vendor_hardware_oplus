@@ -15,21 +15,14 @@ fn set(path: &str, value: String) -> Result<(), StatusCode> {
     std::fs::write(path, value).map_err(|_| StatusCode::PERMISSION_DENIED)
 }
 
-fn get(path: &str) -> Option<String> {
-    std::fs::read_to_string(path).ok()
-}
-
 pub struct OplusPowerShare;
 
 impl Interface for OplusPowerShare {}
 
 impl IPowerShare for OplusPowerShare {
     fn isEnabled(&self) -> BinderResult<bool> {
-        if let Some(ans) = get(TX_ENABLE_PATH) {
-            Ok(ans != "disable")
-        } else {
-            Ok(false)
-        }
+        let value = fs::read_to_string("TX_ENABLE_PATH")?;
+        Ok(value.trim() != "disable")
     }
 
     fn setEnabled(&self, enabled: bool) -> BinderResult<bool> {
