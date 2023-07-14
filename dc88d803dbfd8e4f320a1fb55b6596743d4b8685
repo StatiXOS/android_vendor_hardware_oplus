@@ -16,6 +16,24 @@
       "message": "!state is fine here",
       "revId": "dc88d803dbfd8e4f320a1fb55b6596743d4b8685",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a36b813d_59d3a31c",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/KeyHandler.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2023-07-14T09:47:07Z",
+      "side": 1,
+      "message": "I literally have 0 clue what I\u0027m doing in this change.",
+      "parentUuid": "9026d39e_e53fef9a",
+      "revId": "dc88d803dbfd8e4f320a1fb55b6596743d4b8685",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
