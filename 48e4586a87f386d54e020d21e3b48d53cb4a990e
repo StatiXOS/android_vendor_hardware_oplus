@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2118a20d_92c54da1",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-12T17:05:48Z",
+      "side": 1,
+      "message": "extra space at the beginning?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 1
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e798ca35_c37311db",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-12T17:05:48Z",
+      "side": 1,
+      "message": "delete",
+      "range": {
+        "startLine": 13,
+        "startChar": 1,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c0834d3_1f2236c9",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-12T17:05:48Z",
+      "side": 1,
+      "message": "make these const",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 62
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c1674b3_7127edc5",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-12T17:05:48Z",
+      "side": 1,
+      "message": "mapOf",
+      "range": {
+        "startLine": 23,
+        "startChar": 41,
+        "endLine": 23,
+        "endChar": 53
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "834dd35d_166b102e",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-12T17:05:48Z",
+      "side": 1,
+      "message": "can put this in the companion object also.",
+      "range": {
+        "startLine": 23,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 5
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bc4d3e2_4f417f4f",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-12T17:05:48Z",
+      "side": 1,
+      "message": "nit: whitespace",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 1
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "137cc671_8bbfc513",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-12T17:05:48Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 1
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b44d84fa_847be000",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-12T17:05:48Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 1
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
