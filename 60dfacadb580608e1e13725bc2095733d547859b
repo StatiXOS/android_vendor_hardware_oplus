@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a9becd4_4044268b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-12T16:21:37Z",
+      "side": 1,
+      "message": "this looks like java code; should it be using .java extension instead? kotlin has different syntax",
+      "revId": "60dfacadb580608e1e13725bc2095733d547859b",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83b50d37_3ae83563",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-12T16:21:37Z",
+      "side": 1,
+      "message": "put these in a `companion object`.\n\ne.g.\n\n```\ncompanion object {\n    private const val TAG \u003d \"UEventKeyHandler\"\n    private const val UEVENT_PATH \u003d \"/proc/tristatekey/tri_state\"\n}\n```",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 76
+      },
+      "revId": "60dfacadb580608e1e13725bc2095733d547859b",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4367bd00_ddfb1494",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-12T16:21:37Z",
+      "side": 1,
+      "message": "this can be a static map, to avoid recreating",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 72
+      },
+      "revId": "60dfacadb580608e1e13725bc2095733d547859b",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
