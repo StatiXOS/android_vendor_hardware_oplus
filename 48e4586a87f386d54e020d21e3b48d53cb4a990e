@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "79fbd16f_febb61a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-02-14T12:19:56Z",
+      "side": 1,
+      "message": "UEvent was apparently removed from AOSP, which makes sinse as to why luk changed to KeyHandler back then. Will rewrite in a newer way.",
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2118a20d_92c54da1",
@@ -14,6 +31,30 @@
       "writtenOn": "2024-02-12T17:05:48Z",
       "side": 1,
       "message": "extra space at the beginning?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 1
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bc53298_a7e71b10",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-02-14T12:19:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2118a20d_92c54da1",
       "range": {
         "startLine": 7,
         "startChar": 0,
@@ -47,6 +88,30 @@
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "912ffdf8_10d3d8f6",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-02-14T12:19:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e798ca35_c37311db",
+      "range": {
+        "startLine": 13,
+        "startChar": 1,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c0834d3_1f2236c9",
@@ -60,6 +125,30 @@
       "writtenOn": "2024-02-12T17:05:48Z",
       "side": 1,
       "message": "make these const",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 62
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42aaa2e9_5bc42fbe",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-02-14T12:19:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c0834d3_1f2236c9",
       "range": {
         "startLine": 18,
         "startChar": 0,
@@ -93,6 +182,30 @@
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b04558f5_a3790a47",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-02-14T12:19:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c1674b3_7127edc5",
+      "range": {
+        "startLine": 23,
+        "startChar": 41,
+        "endLine": 23,
+        "endChar": 53
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "834dd35d_166b102e",
@@ -106,6 +219,30 @@
       "writtenOn": "2024-02-12T17:05:48Z",
       "side": 1,
       "message": "can put this in the companion object also.",
+      "range": {
+        "startLine": 23,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 5
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5a41579_4da607f6",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-02-14T12:19:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "834dd35d_166b102e",
       "range": {
         "startLine": 23,
         "startChar": 1,
@@ -139,6 +276,30 @@
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b73b3b5_72137367",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-02-14T12:19:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2bc4d3e2_4f417f4f",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 1
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "137cc671_8bbfc513",
@@ -162,6 +323,30 @@
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0588c10_e9838b4b",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-02-14T12:19:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "137cc671_8bbfc513",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 1
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b44d84fa_847be000",
@@ -175,6 +360,30 @@
       "writtenOn": "2024-02-12T17:05:48Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 1
+      },
+      "revId": "48e4586a87f386d54e020d21e3b48d53cb4a990e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e65116d_3413bcbd",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-02-14T12:19:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b44d84fa_847be000",
       "range": {
         "startLine": 46,
         "startChar": 0,

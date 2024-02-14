@@ -104,6 +104,30 @@
       },
       "revId": "60dfacadb580608e1e13725bc2095733d547859b",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c38660c_1a2c020b",
+        "filename": "KeyHandler/src/org/lineageos/settings/device/UEventKeyHandler.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-02-14T12:19:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4367bd00_ddfb1494",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 72
+      },
+      "revId": "60dfacadb580608e1e13725bc2095733d547859b",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
